@@ -50,7 +50,6 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
-        // email: req.body.email,
         password: req.body.password
     })
         .then(dbUserData => {
@@ -76,7 +75,7 @@ router.post('/login', (req, res) => {
     })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(400).json({ message: 'No user with that username!' });
+                res.status(400).json({ message: 'No user found' });
                 return;
             }
 
@@ -92,7 +91,7 @@ router.post('/login', (req, res) => {
                 req.session.username = dbUserData.username;
                 req.session.loggedIn = true;
 
-                res.json({ user: dbUserData, message: 'You are now logged in!' });
+                res.json({ user: dbUserData, message: 'You are now logged in' });
             });
         });
 });
@@ -117,7 +116,7 @@ router.put('/:id', (req, res) => {
     })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No user found' });
                 return;
             }
             res.json(dbUserData);
@@ -136,7 +135,7 @@ router.delete('/:id', (req, res) => {
     })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No user found' });
                 return;
             }
             res.json(dbUserData);
