@@ -7,7 +7,7 @@ const commentdata = [
         post_id: 1
     },
     {
-        comment_text: 'parasailing intot the sunset',
+        comment_text: 'parasailing into the sunset',
         user_id: 6,
         post_id: 8
     },

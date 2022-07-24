@@ -41,6 +41,14 @@ const userdata = [
     {
         username: 'berry77',
         password: '123abcxyz'
+    },
+    {
+        username: 'berrybonds77',
+        password: '123abcxyz'
+    },
+    {
+        username: 'berryboss77',
+        password: '123abcxyz'
     }
 ];
 
